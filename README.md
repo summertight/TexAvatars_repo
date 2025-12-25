@@ -7,32 +7,27 @@
     <a href="https://keh0t0.github.io/" target="_blank">Taewoong Kang</a><sup>1</sup>&emsp;
     <a href="https://sites.google.com/site/jaegulchoo/" target="_blank">Jaegul Choo</a><sup>1</sup>
 </div>
-
-<br>
-
+<div align="center">
+    <sup>1</sup>KAIST AI&emsp;
+    <sup>2</sup>Hanyang University
+</div>
 <div align="center">
     <sup>*</sup> denotes equal contribution.
 </div>
 
 <br>
+<div align='center'>
+    <a href='https://summertight.github.io/TexAvatars/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
+    <a href='https://arxiv.org/abs/2512.21099'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 
-<div align="center">
-    <sup>1</sup>KAIST AI&emsp;
-    <sup>2</sup>Hanyang University
 </div>
 
 <br>
 
+## 📸 Teaser
 
-<p align="center">
-  <img src="assets/texavatars_project_teaser_final.gif" width="100%">
-</p>
+https://github.com/user-attachments/assets/ca77ed02-9a3e-49cd-ab5d-b7a5e46f4cb2
 
-<p align="center">
-  <a href="https://summertight.github.io/TexAvatars/">Project Page</a>
-  &nbsp;•&nbsp;
-  <a href="https://arxiv.org/abs/2512.21099">arXiv</a>
-</p>
 
 
 <h2>🚨 TODO</h2>
@@ -61,11 +56,13 @@
 - System requirement: Ubuntu 20.04/Ubuntu 22.04, Cuda 11.8
 - Tested GPUs: 2080, RTX3090
 
-Create conda environment:
+TBD
+
+## 💾 Download
 
 TBD
 
-## 🗝️️ Usage
+## 🚀 Render
 ### Self-Reenactment
 TBD
 
@@ -73,4 +70,6 @@ TBD
 
 TBD
 
-## Training
+## 🗝️️ Training
+
+TBD
