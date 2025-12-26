@@ -17,12 +17,12 @@
 
 <br>
 <div align='center'>
-    <a href='https://summertight.github.io/TexAvatars/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
+    <a href='https://summertight.github.io/TexAvatars/'><img src='https://img.shields.io/badge/Project-HomePage-3A4F7A?style=flat'></a>
     <a href='https://arxiv.org/abs/2512.21099'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 
 </div>
 
-<br>
+
 
 ## 📸 Teaser
 
@@ -32,46 +32,148 @@ https://github.com/user-attachments/assets/fb5e97f2-a097-4ff3-9f05-56bbdb50da5a
 
 
 
-<h2>🚨 TODO</h2>
-<h3>Within two weeks:</h3>
+<h2>🚨 Note</h2>
 
-<ul>
-  <li>
-    <input type="checkbox" checked disabled>
-    Detailed usage & settings</b>
-  </li>
-  <li>
-    <input type="checkbox" checked disabled>
-    Release <b>self/cross-reenactment code</b>
-  </li>
-  <li>
-    <input type="checkbox" checked disabled>
-    Release <b>pretrained weights for some IDs</b>
-  </li>
-  <li>
-    <input type="checkbox" checked disabled>
-    Release <b>training code</b>
-  </li>
-</ul>
+## Within this week:
+Sample processed dataset, pretrained weights and EMOPortraits processing instruction will be released soon!
+
+<br>
 
 ## ⚙️ Installation
-- System requirement: Ubuntu 20.04/Ubuntu 22.04, Cuda 11.8
-- Tested GPUs: 2080, RTX3090
+- System requirement: Ubuntu 20.04/Ubuntu 22.04, CUDA 11.8
+- Tested GPUs: RTX2080Ti, 3090Ti
 
-TBD
+```bash
+git clone https://github.com/summertight/TexAvatars_repo.git --recursive
+cd TexAvatars_repo
+
+conda create -n texavatars python=3.10
+conda activate texavatars
+```
+
+
+(Optional) If your environment doesn't match CUDA 11.8:
+```bash
+conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit ninja
+```
+
+
+Install packages:
+
+```bash
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+```
+
+<br>
 
 ## 💾 Download
+### 1. Dataset
+Our code uses ```NeRSemble``` multi-view dataset. Please refer to [NeRSemble](https://github.com/tobias-kirschstein/nersemble-data) github and submit your agreement([link](forms.gle/rYRoGNh2ed51TDWX9)) to download. 
 
-TBD
+A detailed instruction of data installation, pre-processing and FLAME pose tracking is already provided by [GaussianAvatars](https://github.com/ShenhanQian/GaussianAvatars) and [VHAP](https://github.com/ShenhanQian/VHAP/blob/main/doc/nersemble.md).
+
+We provide the fully-processed dataset of ID ```074``` and ```304``` in [this link](). An expected folder structure is as follows:
+
+```bash
+PATH/TO/DATASET/
+├── 074_EMO-1_v16_DS2-0.5x_lmkSTAR_teethV3_SMOOTH_...
+│   ├── images/
+│   ├── fg_masks/
+│   ├── flame_param/
+│   ├── emo_embs/                  # EMOPortraits embeddings
+│   ├── canonical_flame_param.npz
+│   ├── transforms.json
+│   ├── transforms_train.json
+│   ├── transforms_val.json
+│   └── transforms_test.json
+│   ...
+├── 074_EXP-1_...
+│   └── (same structure)
+│   ...
+└── UNION10_074_EMO1234EXP234589_v16_DS2-...
+    ├── canonical_flame_param.npz
+    ├── sequences_test.txt
+    ├── sequences_trainval.txt
+    ├── transforms_train.json
+    ├── transforms_val.json
+    └── transforms_test.json
+```
+
+<br>
+
+### 2. FLAME Model
+Our code relies on FLAME 2023. Please download [FLAME assets](https://flame.is.tue.mpg.de/download.php) and place them in following paths:
+
+- FLAME2023 (with jaw) -> `flame_model/assets/flame/flame2023.pkl`
+- FLAME_masks -> `flame_model/assets/flame/FLAME_masks.pkl`
+
+<br>
+
+### 3. EMOPortraits
+For each frame, you need to obtain embeddings of [EMOPortraits](https://github.com/neeek2303/EMOPortraits). A detailed instruction will be updated soon.
+
+For now, we provide them of ID ```074``` and ```304```, which are already within the provided processed dataset.
+
+<br>
+
+### 4. Pretrained Weights
+
+We provide the checkpoint for ID ```074```. Download via [this link]() and place the folder under ```./output/```.
+
+
+After all of these, your folder tree must be like:
+
+
+```bash
+
+```
+
+<br>
+
 
 ## 🚀 Render
 ### Self-Reenactment
-TBD
+Edit ```self_reenact.sh``` with proper dataset and saving path. Then run
+```bash
+bash self_reenact.sh $GPU_ID $SUBJ_ID
+```
+
+. For example,
+
+```bash
+bash self_reenact.sh 0 074
+```
+
+<br>
 
 ### Cross-Reenactment
 
-TBD
+Edit ```cross_reenact.sh``` with proper dataset and saving path. Then run
+```bash
+bash cross_reenact.sh $GPU_ID $SUBJ_ID $DRIVER_ID
+```
+
+. For example,
+
+```bash
+bash cross_reenact.sh 0 074 304
+```
+
+<br>
 
 ## 🗝️️ Training
 
-TBD
+Edit ```train.sh``` with proper dataset and saving path. Then run
+```bash
+bash cross_reenact.sh $GPU_ID $SUBJ_ID
+```
+
+. For example,
+
+```bash
+bash cross_reenact.sh 0 304
+```
+
+
+<br>
