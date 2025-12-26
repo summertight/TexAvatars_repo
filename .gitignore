@@ -1,0 +1,23 @@
+*.pyc
+.vscode
+output
+build
+data
+# *.ply
+# *.jpg
+# *.png
+# *.obj
+**/PKG-INFO
+output_final/
+# submodules
+**__pycache__**
+*.png
+*.out
+eval
+*.npz
+**/tmp
+dummy/
+nvdiffrast/
+# from nersemble-crop
+pretrained_models/
+

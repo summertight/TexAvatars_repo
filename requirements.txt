@@ -1,0 +1,19 @@
+tqdm
+numpy==1.22.3
+matplotlib
+scipy
+chumpy
+tensorboard
+fvcore
+iopath
+plyfile
+tyro
+dearpygui
+roma
+einops
+kornia
+xatlas
+git+https://github.com/NVlabs/nvdiffrast
+#git+https://github.com/facebookresearch/pytorch3d.git
+# submodules/diff-gaussian-rasterization
+# submodules/simple-knn

@@ -100,34 +100,23 @@ PATH/TO/DATASET/
     └── transforms_test.json
 ```
 
-<br>
-
 ### 2. FLAME Model
 Our code relies on FLAME 2023. Please download [FLAME assets](https://flame.is.tue.mpg.de/download.php) and place them in following paths:
 
 - FLAME2023 (with jaw) -> `flame_model/assets/flame/flame2023.pkl`
 - FLAME_masks -> `flame_model/assets/flame/FLAME_masks.pkl`
 
-<br>
+
 
 ### 3. EMOPortraits
 For each frame, you need to obtain embeddings of [EMOPortraits](https://github.com/neeek2303/EMOPortraits). A detailed instruction will be updated soon.
 
 For now, we provide them of ID ```074``` and ```304```, which are already within the provided processed dataset.
 
-<br>
 
 ### 4. Pretrained Weights
 
-We provide the checkpoint for ID ```074```. Download via [this link]() and place the folder under ```./output/```.
-
-
-After all of these, your folder tree must be like:
-
-
-```bash
-
-```
+We provide the checkpoint for ID ```074```. Download via [this link]() and place the folder under ```./output/```. ```./``` indicates your current TexAvatars
 
 <br>
 
@@ -166,13 +155,13 @@ bash cross_reenact.sh 0 074 304
 
 Edit ```train.sh``` with proper dataset and saving path. Then run
 ```bash
-bash cross_reenact.sh $GPU_ID $SUBJ_ID
+bash train.sh $GPU_ID $SUBJ_ID
 ```
 
 . For example,
 
 ```bash
-bash cross_reenact.sh 0 304
+bash train.sh 0 304
 ```
 
 
