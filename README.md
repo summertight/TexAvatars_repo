@@ -26,7 +26,9 @@
 
 ## 📸 Teaser
 
-https://github.com/user-attachments/assets/ca77ed02-9a3e-49cd-ab5d-b7a5e46f4cb2
+
+
+https://github.com/user-attachments/assets/fb5e97f2-a097-4ff3-9f05-56bbdb50da5a
 
 
 
