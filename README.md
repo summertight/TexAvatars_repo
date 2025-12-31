@@ -31,12 +31,6 @@
 https://github.com/user-attachments/assets/fb5e97f2-a097-4ff3-9f05-56bbdb50da5a
 
 
-
-<h2>🚨 Note</h2>
-
-## Within this week:
-Sample processed dataset, pretrained weights and EMOPortraits processing instruction will be released soon!
-
 <br>
 
 ## ⚙️ Installation
@@ -71,9 +65,9 @@ pip install -r requirements.txt
 ### 1. Dataset
 Our code uses ```NeRSemble``` multi-view dataset. Please refer to [NeRSemble](https://github.com/tobias-kirschstein/nersemble-data) github and submit your agreement([link](forms.gle/rYRoGNh2ed51TDWX9)) to download. 
 
-A detailed instruction of data installation, pre-processing and FLAME pose tracking is already provided by [GaussianAvatars](https://github.com/ShenhanQian/GaussianAvatars) and [VHAP](https://github.com/ShenhanQian/VHAP/blob/main/doc/nersemble.md).
+A detailed instruction of pre-processing and FLAME pose tracking is already provided by [VHAP](https://github.com/ShenhanQian/VHAP/blob/main/doc/nersemble.md).
 
-We provide the fully-processed dataset of ID ```074``` and ```304``` in [this link](). An expected folder structure is as follows:
+We provide the fully-processed dataset of ID ```074``` and ```175``` in [Google Drive](https://drive.google.com/drive/folders/1OmBkZgDazsBdAXi2dToRI_1t_snu7q_7?usp=sharing). Download them and place under PATH/TO/DATASET then unzip each. An expected folder structure is as follows:
 
 ```bash
 PATH/TO/DATASET/
@@ -81,7 +75,7 @@ PATH/TO/DATASET/
 │   ├── images/
 │   ├── fg_masks/
 │   ├── flame_param/
-│   ├── emo_embs/                  # EMOPortraits embeddings
+│   ├── emo_emb/                  # EMOPortraits embeddings
 │   ├── canonical_flame_param.npz
 │   ├── transforms.json
 │   ├── transforms_train.json
@@ -111,15 +105,13 @@ Our code relies on FLAME 2023. Please download [FLAME assets](https://flame.is.t
 ### 3. EMOPortraits
 For each frame, you need to obtain embeddings of [EMOPortraits](https://github.com/neeek2303/EMOPortraits). A detailed instruction will be updated soon.
 
-For now, we provide them of ID ```074``` and ```304```, which are already within the provided processed dataset.
+For now, we provide them of ID ```074``` and ```175```, which are already within the provided processed dataset.
 
 
 ### 4. Pretrained Weights
 
-We provide the checkpoint for ID ```074```. Download via [this link]() and place the folder under ```./output/```. ```./``` indicates your current TexAvatars
-
+We provide the checkpoint for ID ```074```. Download via [Google Drive](https://drive.google.com/drive/folders/1OmBkZgDazsBdAXi2dToRI_1t_snu7q_7?usp=sharing) and place the folder under ```./output/```. ```./``` indicates your current cloned TexAvatars path.
 <br>
-
 
 ## 🚀 Render
 ### Self-Reenactment
@@ -134,8 +126,6 @@ bash self_reenact.sh $GPU_ID $SUBJ_ID
 bash self_reenact.sh 0 074
 ```
 
-<br>
-
 ### Cross-Reenactment
 
 Edit ```cross_reenact.sh``` with proper dataset and saving path. Then run
@@ -146,10 +136,9 @@ bash cross_reenact.sh $GPU_ID $SUBJ_ID $DRIVER_ID
 . For example,
 
 ```bash
-bash cross_reenact.sh 0 074 304
+bash cross_reenact.sh 0 074 175
 ```
 
-<br>
 
 ## 🗝️️ Training
 
@@ -161,7 +150,7 @@ bash train.sh $GPU_ID $SUBJ_ID
 . For example,
 
 ```bash
-bash train.sh 0 304
+bash train.sh 0 074
 ```
 
 
