@@ -102,10 +102,10 @@ Our code relies on FLAME 2023. Please download [FLAME assets](https://flame.is.t
 
 
 
-### 3. EMOPortraits
-For each frame, you need to obtain embeddings of [EMOPortraits](https://github.com/neeek2303/EMOPortraits). A detailed instruction will be updated soon.
+### 3. EMOPortraits Embeddings
+For each frame, you need to obtain embeddings of [EMOPortraits](https://github.com/neeek2303/EMOPortraits). Please follow the instruction of [TexAvatars-EMO](https://github.com/justin4ai/TexAvatars-EMO).
 
-For now, we provide them of ID ```074``` and ```175```, which are already within the provided processed dataset.
+We provide extracted embeddings for ID ```074``` and ```175```, which are already within the provided processed dataset.
 
 
 ### 4. Pretrained Weights
